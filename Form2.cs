@@ -86,6 +86,13 @@ namespace ClimaDepartamentos
             dataGridView2.Refresh();
 
             // 
+            float promedio = 0;
+            for(int x = 0; x < reportes.Count;x++)
+            {
+                promedio += reportes[x].Temperatura;
+            }
+
+            label2.Text = promedio.ToString();
         }
 
         private void Form2_Load(object sender, EventArgs e)

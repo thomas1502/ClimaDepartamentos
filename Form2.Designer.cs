@@ -31,11 +31,11 @@ namespace ClimaDepartamentos
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.btnDesplegar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -58,19 +58,9 @@ namespace ClimaDepartamentos
             this.dataGridView2.Size = new System.Drawing.Size(901, 224);
             this.dataGridView2.TabIndex = 1;
             // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(12, 579);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 62;
-            this.dataGridView3.RowTemplate.Height = 28;
-            this.dataGridView3.Size = new System.Drawing.Size(901, 227);
-            this.dataGridView3.TabIndex = 2;
-            // 
             // btnDesplegar
             // 
-            this.btnDesplegar.Location = new System.Drawing.Point(12, 845);
+            this.btnDesplegar.Location = new System.Drawing.Point(12, 654);
             this.btnDesplegar.Name = "btnDesplegar";
             this.btnDesplegar.Size = new System.Drawing.Size(901, 48);
             this.btnDesplegar.TabIndex = 3;
@@ -78,13 +68,32 @@ namespace ClimaDepartamentos
             this.btnDesplegar.UseVisualStyleBackColor = true;
             this.btnDesplegar.Click += new System.EventHandler(this.btnDesplegar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 597);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(269, 30);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Promedio temperaturas:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(216, 599);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(18, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "0";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 915);
+            this.ClientSize = new System.Drawing.Size(925, 725);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDesplegar);
-            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form2";
@@ -92,8 +101,8 @@ namespace ClimaDepartamentos
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -101,7 +110,8 @@ namespace ClimaDepartamentos
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button btnDesplegar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
