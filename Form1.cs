@@ -43,22 +43,26 @@ namespace ClimaDepartamentos
 
                 while (reader.Peek() > -1)
                 {
-                    Departamento vehiculoTemp = new Departamento();
-                    vehiculoTemp.Codigo = reader.ReadLine();
-                    vehiculoTemp.Nombre = reader.ReadLine();
+                    Departamento departamentoTemp = new Departamento();
+                    departamentoTemp.Codigo = reader.ReadLine();
+                    departamentoTemp.Nombre = reader.ReadLine();
 
-                    departamentos.Add(vehiculoTemp);
+                    departamentos.Add(departamentoTemp);
                 }
                 reader.Close();
             }
         }
-
+        private void Limpiar()
+        {
+            cmbDepartamento.SelectedIndex = -1;
+            txtTemperatura.Text = "";
+        }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             Clima climaTemp = new Clima();
 
             climaTemp.Codigo = cmbDepartamento.SelectedValue.ToString();
-            climaTemp.Temperatura = Convert.ToInt32(txtTemperatura.Text);
+            climaTemp.Temperatura = float.Parse(txtTemperatura.Text);
             climaTemp.FechaMedicion = mcFecha.SelectionStart;
 
             climas.Add(climaTemp);
@@ -71,9 +75,11 @@ namespace ClimaDepartamentos
         {
             LeerDepartamentos();
             // Cargar las placas al ComboBox
-            cmbDepartamento.ValueMember = "Nombre";
+            cmbDepartamento.DisplayMember = "Nombre";
+            cmbDepartamento.ValueMember = "Codigo";
             cmbDepartamento.DataSource = null;
             cmbDepartamento.DataSource = departamentos;
+            cmbDepartamento.Refresh();
         }
     }
 }
