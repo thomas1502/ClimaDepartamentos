@@ -78,9 +78,9 @@ namespace ClimaDepartamentos
             dataGridView1.Refresh();
 
             // Data GriedView2
-            reportes.OrderBy(p => p.Temperatura);
+            List<Reporte> r = reportes.OrderBy(p => p.Temperatura).ToList();
             dataGridView2.DataSource = null;
-            dataGridView2.DataSource = reportes;
+            dataGridView2.DataSource = r;
             dataGridView2.Refresh();
 
             // Promedio
