@@ -62,7 +62,7 @@ namespace ClimaDepartamentos
         private void btnDesplegar_Click(object sender, EventArgs e)
         {
             // DataGriedView1
-            for(int x = 0; x < climas.Count;x++)
+            for(int x = 0; x < climas.Count; x++)
             {
                 for(int y = 0; y < departamentos.Count;y++)
                 {
@@ -72,6 +72,8 @@ namespace ClimaDepartamentos
 
                         reporteTemp.Nombre = departamentos[y].Nombre;
                         reporteTemp.Temperatura = climas[x].Temperatura;
+
+                        reportes.Add(reporteTemp);
                     }
                 }
             }
@@ -85,7 +87,7 @@ namespace ClimaDepartamentos
             dataGridView2.DataSource = reportes;
             dataGridView2.Refresh();
 
-            // 
+            // Promedio
             float promedio = 0;
             for(int x = 0; x < reportes.Count;x++)
             {

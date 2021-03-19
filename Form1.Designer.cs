@@ -116,6 +116,7 @@ namespace ClimaDepartamentos
             this.btnFormulario.TabIndex = 8;
             this.btnFormulario.Text = "Formularios";
             this.btnFormulario.UseVisualStyleBackColor = true;
+            this.btnFormulario.Click += new System.EventHandler(this.btnFormulario_Click);
             // 
             // Form1
             // 

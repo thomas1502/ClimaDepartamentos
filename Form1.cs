@@ -75,5 +75,11 @@ namespace ClimaDepartamentos
             cmbDepartamento.DataSource = departamentos;
             cmbDepartamento.Refresh();
         }
+
+        private void btnFormulario_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.Show();
+        }
     }
 }
