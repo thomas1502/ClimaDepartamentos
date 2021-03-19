@@ -79,6 +79,13 @@ namespace ClimaDepartamentos
             dataGridView1.DataSource = reportes;
             dataGridView1.Refresh();
 
+            // Data GriedView2
+            reportes.OrderBy(p => p.Temperatura);
+            dataGridView2.DataSource = null;
+            dataGridView2.DataSource = reportes;
+            dataGridView2.Refresh();
+
+            // 
         }
 
         private void Form2_Load(object sender, EventArgs e)
