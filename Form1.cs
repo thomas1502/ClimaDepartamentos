@@ -25,7 +25,6 @@ namespace ClimaDepartamentos
                 writer.WriteLine(p.Temperatura);
                 writer.WriteLine(p.FechaMedicion);
             }
-
             writer.Close();
         }
         private void LeerDepartamentos()
@@ -42,6 +41,25 @@ namespace ClimaDepartamentos
                     departamentoTemp.Nombre = reader.ReadLine();
 
                     departamentos.Add(departamentoTemp);
+                }
+                reader.Close();
+            }
+        }
+        private void LeerTemperatura()
+        {
+            if (File.Exists("Temperaturas.txt"))
+            {
+                FileStream stream = new FileStream("Temperaturas.txt", FileMode.Open, FileAccess.Read);
+                StreamReader reader = new StreamReader(stream);
+
+                while (reader.Peek() > -1)
+                {
+                    Clima climaTemp = new Clima();
+                    climaTemp.Codigo = reader.ReadLine();
+                    climaTemp.Temperatura = float.Parse(reader.ReadLine());
+                    climaTemp.FechaMedicion = Convert.ToDateTime(reader.ReadLine());
+
+                    climas.Add(climaTemp);
                 }
                 reader.Close();
             }
@@ -67,6 +85,7 @@ namespace ClimaDepartamentos
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            LeerTemperatura();
             LeerDepartamentos();
             // Cargar las placas al ComboBox
             cmbDepartamento.DisplayMember = "Nombre";

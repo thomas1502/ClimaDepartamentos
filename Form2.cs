@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClimaDepartamentos
@@ -93,7 +89,7 @@ namespace ClimaDepartamentos
             {
                 promedio += reportes[x].Temperatura;
             }
-
+            promedio /= reportes.Count;
             label2.Text = promedio.ToString();
         }
 
